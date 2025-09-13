@@ -1,5 +1,4 @@
-/* login.css */
-    body {
+body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to right, #56ccf2, #2f80ed);
@@ -7,7 +6,6 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      /* background-image: ; */
     }
 
     .login-container {
@@ -75,4 +73,20 @@
       text-decoration: underline;
     }
 
+    /* Back button */
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 15px;
+      background: #ccc;
+      color: #333;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #aaa;
+    }
 
