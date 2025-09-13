@@ -2,8 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Fallback color */
     color: #333;
+
+    /* New background properties */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Kangchendzonga_from_Pelling.jpg'); /* Example image URL */
+    background-size: cover; /* Cover the entire background area */
+    background-attachment: fixed; /* Keep background fixed when scrolling */
+    background-position: center center; /* Center the background image */
 }
 
 header {
@@ -11,6 +17,8 @@ header {
     color: white;
     padding: 1em 0;
     text-align: center;
+    /* Adding some transparency to the header background so the mountain image can subtly show through */
+    background-color: rgba(76, 175, 80, 0.8);
 }
 
 main {
@@ -22,6 +30,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    /* Adding some transparency to the main content background */
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .selection-panel, .info-display {
@@ -70,4 +80,6 @@ footer {
     margin-top: 20px;
     background-color: #333;
     color: white;
+    /* Adding some transparency to the footer background */
+    background-color: rgba(51, 51, 51, 0.8);
 }

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Community Health — Waterborne Disease Early Warning</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+     <div class="brand">
+     <!-- Left side: Logo + title -->
+         <div class="brand-left">
+             <div class="logo">SCH</div>
+                <div>
+                 <div style="font-weight:700">Smart Community Health</div>
+                    <div style="font-size:13px;opacity:0.95">
+                    Waterborne disease monitoring & early warning — rural NE India
+                    </div>
+         </div>
+  </div>
+
+  <!-- Right side: Login buttons -->
+  <div class="login-buttons">
+    <a href="#login-patient" class="secondary">Patient Login</a>
+    <a href="#login-health" class="secondary">Health Centre Login</a>
+  </div>
+</div>
+
+      </div>
+
+      <div class="hero" style="margin-top:18px">
+        <div>
+          <h1>Detect. Alert. Act — real-time community-driven early warning for waterborne disease.</h1>
+          <p class="lead">A low-cost, offline-first monitoring system combining water sensors, community syndromic reporting, and simple explainable analytics to protect rural communities during monsoon & flood seasons.</p>
+
+          <div class="features">
+             <div class="feature">
+                <div class="icon">S</div>
+                 <div>
+                    <div style="font-weight:700">Sensor network</div>
+                    <div class="muted">Turbidity, TDS, rain & water-level sensors with LoRa/4G gateway.</div>
+                 </div>
+             </div>
+             <div class="feature">
+                <div class="icon">A</div>
+                 <div>
+                    <div style="font-weight:700">ASHA app</div>
+                    <div class="muted">Offline-first reporting, step-by-step SOPs, and alerts.</div>
+                 </div>
+                </div>
+             <div class="feature">
+                 <div class="icon">M</div>
+                 <div>
+                    <div style="font-weight:700">Monitoring & ML</div>
+                    <div class="muted">Explainable outbreak score combining environmental + syndromic signals.</div>
+                 </div>
+             </div>
+             <div class="feature">
+               <div class="icon">C</div>
+               <div>
+                  <div style="font-weight:700">Community</div>
+                  <div class="muted">SMS/IVR and local notice templates for fast, trusted communication.</div>
+               </div>
+             </div>
+            </div>
+
+        </div>
+    </div>
+
+        <div>
+          <div class="card dashboard">
+            <h3 style="margin-bottom:6px">Pilot Dashboard — Sample village</h3>
+            <div class="muted" style="margin-bottom:12px">Realtime signals & outbreak score</div>
+            <div class="row">
+              <div class="col card" style="padding:12px">
+                <div style="font-size:12px;color:var(--muted)">Outbreak score</div>
+                <div style="font-size:32px;font-weight:800;color:var(--accent)" id="score">14</div>
+                <div class="muted" style="font-size:13px">Last updated: <span id="updated">just now</span></div>
+              </div>
+              <div class="col card" style="padding:12px">
+                <div style="font-size:12px;color:var(--muted)">Recent alerts</div>
+                <ul id="alerts" style="padding-left:18px;margin:8px 0 0 0;font-size:14px"></ul>
+              </div>
+            </div>
+            <div style="margin-top:12px">
+              <canvas id="turbidityChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <div class="grid">
+        <div class="card">
+          <h3>Why this matters</h3>
+          <p class="muted">Monsoon-driven turbidity and contamination events can rapidly increase risk of diarrhoeal outbreaks. Rapid community reporting + low-cost sensors can cut detection & response time from days to hours.</p>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <ol class="muted">
+            <li>Water sensors + gateway stream hourly readings.</li>
+            <li>ASHAs submit syndromic reports (offline if needed).</li>
+            <li>Edge rules + cloud scoring raise alerts and push SMS/IVR.</li>
+            <li>Local SOPs guide investigation and interventions.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Pilot deliverables</h3>
+          <ul class="muted">
+            <li>ASHA app & SMS gateway</li>
+            <li>10 sensor kits + gateway</li>
+            <li>Dashboard + alerting rules</li>
+            <li>Training & SOPs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section style="margin-top:22px;display:flex;gap:18px">
+      <div style="flex:1">
+        <div class="card">
+          <h3 id="get-started">Get started</h3>
+          <p class="muted">Tell me where you'd like to pilot (district / block) and I will prepare a funding-ready 4-page proposal and BOM. Or, use the form below to request a demo.</p>
+          <form id="contact" style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+            <input name="name" placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #e6eef0" required />
+            <input name="email" placeholder="Email or phone" style="padding:10px;border-radius:8px;border:1px solid #e6eef0" required />
+            <textarea name="message" placeholder="Pilot district, timeline, or notes" rows="4" style="padding:10px;border-radius:8px;border:1px solid #e6eef0"></textarea>
+            <div style="display:flex;gap:8px">
+              <button type="submit" class="btn">Request demo</button>
+              <button type="button" id="download" class="secondary">Download HTML</button>
+            </div>
+            <div id="formMsg" class="muted" style="font-size:13px"></div>
+          </form>
+        </div>
+      </div> -->
+
+      <!-- <div style="width:360px">
+        <div class="card">
+          <h3 id="demo">Live demo controls</h3>
+          <p class="muted">Simulate sensor spikes and reports to see alert behavior.</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button id="spike" class="btn">Simulate turbidity spike</button>
+            <button id="report" class="secondary">Add syndromic report</button>
+          </div>
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">Notes: This is a static demo — real deployment sends secure data to a backend.</div>
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div class="muted">© Smart Community Health — Prototype</div>
+      <div style="display:flex;gap:8px">
+        <a href="#" class="muted">Privacy</a>
+        <a href="#" class="muted">SOPs</a>
+        <a href="#" class="muted">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>src="frontpage_script.js"</script>
+</body>
+</html>
