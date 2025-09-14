@@ -16,6 +16,7 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       width: 350px;
       text-align: center;
+      position: relative;
     }
 
     .login-container h2 {
@@ -79,18 +80,33 @@
     }
 
     /* Back button */
-    .back-btn {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 8px 15px;
-      background: #ccc;
-      color: #333;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
-      transition: 0.3s;
-    }
+   .back-btn {
+  position: absolute;       /* Stick it at the top-left */
+  top: 15px;
+  left: 15px;
 
-    .back-btn:hover {
-      background: #aaa;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  background: #ffffff;
+  color: #333;
+  text-decoration: none;
+
+  border-radius: 50%;  
+  border-color: black;  /* Circle */
+  font-size: 18px;
+  font-weight: bold;
+
+  transition: 0.3s;
+
+  border-color:#aaa;
+ border-style:solid;
+   }
+
+.back-btn:hover {
+  background: #aaa;
+}
