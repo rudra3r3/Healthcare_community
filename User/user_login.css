@@ -15,6 +15,7 @@ body {
       box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
       width: 350px;
       text-align: center;
+      position: relative;
     }
 
     .login-container h2 {
@@ -74,7 +75,7 @@ body {
     }
 
     /* Back button */
-    .back-btn {
+    /* .back-btn {
       display: inline-block;
       margin-bottom: 20px;
       padding: 8px 15px;
@@ -88,5 +89,35 @@ body {
 
     .back-btn:hover {
       background: #aaa;
-    }
+    } */
 
+   .back-btn {
+  position: absolute;       /* Stick it at the top-left */
+  top: 15px;
+  left: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  background: #ffffff;
+  color: #333;
+  text-decoration: none;
+
+  border-radius: 50%;  
+  border-color: black;  /* Circle */
+  font-size: 18px;
+  font-weight: bold;
+
+  transition: 0.3s;
+
+  border-color:#aaa;
+ border-style:solid;
+   }
+
+.back-btn:hover {
+  background: #aaa;
+}
