@@ -13,7 +13,7 @@ document.getElementById("login_btn").addEventListener("click", function(event) {
 
             if (validUser) {
                 alert("Login successful! Redirecting...");
-                window.location.href = "admin_dashboard.html"; 
+                window.location.href = "admin_dashboard2.html"; 
             } else {
                 alert("Invalid username or password. Try again.");
             }
