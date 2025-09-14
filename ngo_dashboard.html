@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NGO Healthcare Dashboard</title>
+    <link rel="stylesheet" href="ngo_dashboard.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>🏥 NGO HealthCare</h2>
+    <a href="#">📊 Dashboard</a>
+    <a href="#">👩‍⚕️ Doctors</a>
+    <a href="#">🧑‍🤝‍🧑 Patients</a>
+    <a href="#">💉 Campaigns</a>
+    <a href="#">📦 Donations</a>
+    <a href="#">⚙️ Settings</a>
+    <a href="#">🚪 Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Topbar -->
+    <div class="topbar">
+      <h1>Dashboard Overview</h1>
+      <input type="text" placeholder="Search...">
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+      <div class="card">
+        <h3>Total Patients</h3>
+        <p class="patients">12,540</p>
+      </div>
+      <div class="card">
+        <h3>Doctors</h3>
+        <p class="doctors">345</p>
+      </div>
+      <div class="card">
+        <h3>Ongoing Campaigns</h3>
+        <p class="campaigns">27</p>
+      </div>
+      <div class="card">
+        <h3>Total Donations</h3>
+        <p class="donations">₹ 1.2 Cr</p>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-section">
+      <h2>Recent Health Campaigns</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Campaign Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Volunteers</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Polio Awareness</td>
+            <td>Guwahati</td>
+            <td>5 Sept 2025</td>
+            <td>120</td>
+            <td>✅ Completed</td>
+          </tr>
+          <tr>
+            <td>Blood Donation Camp</td>
+            <td>Shillong</td>
+            <td>10 Sept 2025</td>
+            <td>95</td>
+            <td>⏳ Ongoing</td>
+          </tr>
+          <tr>
+            <td>Water Sanitation Drive</td>
+            <td>Imphal</td>
+            <td>15 Sept 2025</td>
+            <td>140</td>
+            <td>📅 Scheduled</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
