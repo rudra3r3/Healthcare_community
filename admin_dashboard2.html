@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard — Northeast India Health & Agriculture</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="admin_dashboard.css"/>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel = "stylesheet" href = "mapping3.css"/>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🌏 Admin Panel</h2>
+      <ul>
+        <li><a href="#" class="active">📊 Dashboard</a></li>
+        <li><a href="#">🏞 States</a></li>
+        <li><a href="#">🦠 Diseases</a></li>
+        <li><a href="#">🗺 Map</a></li>
+        <li><a href="#">⚙️ Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main">
+      <!-- Topbar -->
+      <header class="topbar">
+        <h1>Northeast India Health & Agriculture Dashboard</h1>
+        <p>Welcome, Admin 👋</p>
+      </header>
+
+      <!-- Content Area -->
+      <main class="content">
+        <!-- Cards Overview -->
+        <div class="cards">
+          <div class="card">
+            <h3>Total States</h3>
+            <p>8</p>
+          </div>
+          <div class="card">
+            <h3>Diseases Tracked</h3>
+            <p>25+</p>
+          </div>
+          <div class="card">
+            <h3>Locust Infestations</h3>
+            <p>2 Types</p>
+          </div>
+          <div class="card">
+            <h3>Last Updated</h3>
+            <p>2025-09-14</p>
+          </div>
+        </div>
+
+        <!-- Dashboard Body -->
+        <div class="dashboard-body">
+          <!-- Left Panel (State Selection) -->
+          <div class="selection-panel">
+            <h2>Select a State</h2>
+            <select id="state-select">
+              <option value="">--Please choose a state--</option>
+            </select>
+            <button id="get-info-button">Get All Information</button>
+
+            <div id="state-details-display">
+              <h3>State Details for <span id="selected-state-name-panel">...</span></h3>
+              <p><strong>Capital:</strong> <span id="state-capital">N/A</span></p>
+              <h4>Districts:</h4>
+              <ul id="state-districts-content"></ul>
+            </div>
+          </div>
+
+          <!-- Right Panel (Info + Map) -->
+          <div class="info-display">
+            <h2>Information for <span id="selected-state-name-display">...</span></h2>
+
+            <div id="map-section">
+              <h3>Geographical Overview</h3>
+              <div id="map"></div>
+            </div>
+
+            <div id="info-tabs">
+              <button class="tab-button active" data-tab="human">Human Diseases</button>
+              <button class="tab-button" data-tab="plant">Plant Diseases</button>
+              <button class="tab-button" data-tab="locust">Locust Infestations</button>
+            </div>
+
+            <div id="human-tab" class="tab-content">
+              <h3>Human Contagious Diseases</h3>
+              <ul id="human-diseases-content"></ul>
+            </div>
+
+            <div id="plant-tab" class="tab-content" style="display:none;">
+              <h3>Contagious Plant Diseases</h3>
+              <ul id="plant-diseases-content"></ul>
+            </div>
+
+            <div id="locust-tab" class="tab-content" style="display:none;">
+              <h3>Locust Infestations</h3>
+              <ul id="locust-infestations-content"></ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 AI Studio | Admin Dashboard</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+  <!-- Custom JS -->
+  <script src="admin_dashboard2.js"></script>
+  <!-- <script src="state2.js"></script> -->
+</body>
+</html>
