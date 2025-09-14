@@ -1,0 +1,92 @@
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('https://images.unsplash.com/photo-1587502536263-1e6556303f9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center/cover;
+    }
+
+    .signup-container {
+      background: #fff;
+      width: 420px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .signup-container h2 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #2c3e50;
+    }
+
+    .signup-container p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .signup-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .signup-container input:focus {
+      border-color: #27ae60;
+      box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+    }
+
+    .signup-container button {
+      width: 100%;
+      padding: 12px;
+      background: #27ae60;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .signup-container button:hover {
+      background: #219150;
+    }
+
+    .signup-container .login-link {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .signup-container .login-link a {
+      color: #27ae60;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .signup-container .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
