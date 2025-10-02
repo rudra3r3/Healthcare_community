@@ -251,3 +251,67 @@ tabButtons.forEach(btn => {
     document.getElementById(btn.dataset.tab + "-tab").style.display = "block";
   });
 });
+
+const toggleButton = document.querySelector('.toggle-button');
+    const body = document.body;
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+    });
+
+    gsap.from('.sidebar', { duration: 1, x: -50, opacity: 0, ease: 'power2.out' });
+window.addEventListener('DOMContentLoaded', () => {
+  gsap.from(".cards", {
+    duration: 1,
+    opacity: 0,   
+    y: 50,        
+    stagger: 0.2, 
+    ease: "back.out(1.7)" 
+  });
+});
+
+    const cursor = document.getElementById('cursor-main');
+    const trail = document.getElementById('cursor-trail');
+
+    let cursorX = window.innerWidth / 2, cursorY = window.innerHeight / 2;
+    let trailX = window.innerWidth / 2, trailY = window.innerHeight / 2;
+    let cursorTimeout;
+
+    function moveCursor(e) {
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+        gsap.to(cursor, { x: cursorX, y: cursorY, duration: 0.21, ease: "power3.out" });
+
+        clearTimeout(cursorTimeout);
+        cursor.style.opacity = 1;
+        trail.style.opacity = 0.3;
+        cursorTimeout = setTimeout(() => {
+            cursor.style.opacity = 0.7;
+            trail.style.opacity = 0.08;
+        }, 2100);
+    }
+    window.addEventListener('mousemove', moveCursor);
+
+    gsap.ticker.add(() => {
+        trailX += (cursorX - trailX) * 0.19;
+        trailY += (cursorY - trailY) * 0.19;
+        gsap.set(trail, { x: trailX, y: trailY });
+    });
+
+    const interactiveSelectors = ['a', 'button', '.toggle-button', '.card', '#state-select'];
+    interactiveSelectors.forEach(sel => {
+        document.querySelectorAll(sel).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                gsap.to(cursor, { scale: 2.2, background: "#fff", boxShadow: "0 0 40px 10px #0891b2" });
+                gsap.to(trail, { scale: 2.8, borderColor: "#fff" });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to(cursor, { scale: 1, background: "#0891b2", boxShadow: "0 0 18px 6px rgba(8,145,178,.15)" });
+                gsap.to(trail, { scale: 1, borderColor: "#0891b2" });
+            });
+        });
+    });
+    
+    if (window.matchMedia("(pointer: coarse)").matches) {
+        cursor.style.display = "none";
+        trail.style.display = "none";
+    }

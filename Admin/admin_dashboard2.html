@@ -5,60 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Dashboard — Northeast India Health & Agriculture</title>
 
-  <!-- External CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  
   <link rel="stylesheet" href="admin_dashboard2.css"/>
 
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-  <link rel = "stylesheet" href = "mapping3.css"/>
 </head>
 <body>
+  <div id="cursor-main"></div>
+  <div id="cursor-trail"></div>
   <div class="dashboard">
-    <!-- Sidebar -->
     <aside class="sidebar">
-      <h2>🌏 Admin Panel</h2>
+        <div class="sidebar-header">
+            <h2><i class="fas fa-shield-alt"></i> Admin Panel</h2>
+        </div>
       <ul>
-        <li><a href="#" class="active">📊 Dashboard</a></li>
-        <li><a href="#">🏞 States</a></li>
-        <li><a href="#">🦠 Diseases</a></li>
-        <li><a href="#">🗺 Map</a></li>
-        <li><a href="#">⚙️ Settings</a></li>
+        <li><a href="#" class="active"><i class="fas fa-chart-bar"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fas fa-map-marked-alt"></i> States</a></li>
+        <li><a href="#"><i class="fas fa-viruses"></i> Diseases</a></li>
+        <li><a href="#"><i class="fas fa-map"></i> Map</a></li>
+        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
       </ul>
     </aside>
 
-    <!-- Main Content -->
     <div class="main">
-      <!-- Topbar -->
       <header class="topbar">
-        <h1>Northeast India Health & Agriculture Dashboard</h1>
-        <p>Welcome, Admin 👋</p>
+        <div class="topbar-title">
+            <h1>Health & Agriculture Dashboard</h1>
+            <p>Welcome, Admin <span class="waving-hand">👋</span></p>
+        </div>
+        <div class="theme-switcher">
+            <div class="toggle-button">
+                <div class="toggle-icon">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </div>
       </header>
 
-      <!-- Content Area -->
       <main class="content">
-        <!-- Cards Overview -->
         <div class="cards">
           <div class="card">
+            <div class="card-icon"><i class="fas fa-flag-usa"></i></div>
             <h3>Total States</h3>
             <p>8</p>
           </div>
           <div class="card">
+            <div class="card-icon"><i class="fas fa-bug"></i></div>
             <h3>Diseases Tracked</h3>
             <p>25+</p>
           </div>
           <div class="card">
+            <div class="card-icon"><i class="fas fa-leaf"></i></div>
             <h3>Locust Infestations</h3>
             <p>2 Types</p>
           </div>
           <div class="card">
+            <div class="card-icon"><i class="fas fa-clock"></i></div>
             <h3>Last Updated</h3>
             <p>2025-09-14</p>
           </div>
         </div>
 
-        <!-- Dashboard Body -->
         <div class="dashboard-body">
-          <!-- Left Panel (State Selection) -->
           <div class="selection-panel">
             <h2>Select a State</h2>
             <select id="state-select">
@@ -74,7 +88,6 @@
             </div>
           </div>
 
-          <!-- Right Panel (Info + Map) -->
           <div class="info-display">
             <h2>Information for <span id="selected-state-name-display">...</span></h2>
 
@@ -89,17 +102,17 @@
               <button class="tab-button" data-tab="locust">Locust Infestations</button>
             </div>
 
-            <div id="human-tab" class="tab-content">
+            <div id="human-tab" class="tab-content active-content">
               <h3>Human Contagious Diseases</h3>
               <ul id="human-diseases-content"></ul>
             </div>
 
-            <div id="plant-tab" class="tab-content" style="display:none;">
+            <div id="plant-tab" class="tab-content">
               <h3>Contagious Plant Diseases</h3>
               <ul id="plant-diseases-content"></ul>
             </div>
 
-            <div id="locust-tab" class="tab-content" style="display:none;">
+            <div id="locust-tab" class="tab-content">
               <h3>Locust Infestations</h3>
               <ul id="locust-infestations-content"></ul>
             </div>
@@ -109,12 +122,10 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 AI Studio | Admin Dashboard</p>
   </footer>
 
-  <!-- Modal -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span id="modal-close">&times;</span>
@@ -123,12 +134,15 @@
     </div>
   </div>
 
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
-  <!-- Custom JS -->
   <script src="admin_dashboard2.js"></script>
-  <!-- <script src="state2.js"></script> -->
+
+  <script>
+    c
+  </script>
+
 </body>
 </html>
