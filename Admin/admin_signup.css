@@ -96,7 +96,6 @@ body.dark-mode .toggle-icon {
 .toggle-icon i {
   position: absolute;
   font-size: 14px;
-  color: #fff;
   left: 4px;
   transition: opacity 0.4s, transform 0.36s;
 }

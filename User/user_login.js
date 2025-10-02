@@ -1,42 +1,41 @@
-{/* <button id="loginBtn">Login</button> */}
+document.addEventListener('DOMContentLoaded', function () {
 
-
-  document.getElementById("login_btn").addEventListener("click", function() {
-    // Optional: Add validation logic here
-    window.location.href = "patient_dashboard.html";
-  });
-
-const themeToggle = document.getElementById('theme-toggle');
-  function updateAria() {
-    themeToggle.setAttribute('aria-checked', document.body.classList.contains('dark-mode'));
-  }
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    updateAria();
-  });
-  themeToggle.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      themeToggle.click();
-    }
-  });
-  updateAria();
-
-  document.querySelectorAll('.toggle-password').forEach(button => {
-    let passwordVisible = false;
-    button.addEventListener('click', () => {
-      passwordVisible = !passwordVisible;
-      const input = button.previousElementSibling;
-      input.type = passwordVisible ? 'text' : 'password';
-      button.innerHTML = passwordVisible ? '<i class="far fa-eye-slash"></i>' : '<i class="far fa-eye"></i>';
-      gsap.fromTo(button, 
-        { scale: 1, rotation: 0 }, 
-        { scale: 1.25, rotation: 30, yoyo: true, repeat: 1, duration: 0.18, ease: "power1.inOut" });
+  // --- Login Button Logic ---
+  const loginButton = document.getElementById('login_btn');
+  if (loginButton) {
+    loginButton.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent form from submitting for now
+      console.log("Login button clicked!");
+      // window.location.href = "patient_dashboard.html"; // You can re-enable this later
     });
-    button.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        button.click();
+  }
+
+  // --- Reusable Theme Toggle Logic ---
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    const updateAria = () => {
+      const isDark = document.body.classList.contains('dark-mode');
+      themeToggle.setAttribute('aria-checked', isDark ? 'true' : 'false');
+    };
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      updateAria();
+    });
+    updateAria();
+  }
+
+  // --- Reusable Password Visibility Toggle Logic ---
+  document.querySelectorAll('.toggle-password').forEach(button => {
+    button.addEventListener('click', () => {
+      const passwordInput = button.previousElementSibling;
+      if (passwordInput) {
+        const currentType = passwordInput.getAttribute('type');
+        passwordInput.setAttribute('type', currentType === 'password' ? 'text' : 'password');
+        const icon = button.querySelector('i');
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
       }
     });
   });
+
+});
