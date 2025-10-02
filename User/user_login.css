@@ -49,56 +49,16 @@ form {
   font-weight: 600;
 }
 
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1.5px solid #ccc;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  background-color: #fff;
-  color: #222;
-}
-
-body.dark-mode input[type="email"],
-body.dark-mode input[type="password"] {
-  background-color: #10281d;
-  border-color: #34d399;
-  color: #e5e5e5;
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus {
-  outline: none;
-  border-color: #22c55e;
-}
-
-.forgot-password{
+.forgot-password,
+.sign-up-link {
   color: #16a34a;
   font-weight: 600;
   text-decoration: none;
 }
 
-
-.forgot-password:hover {
-  text-decoration: underline;
-}
-
-.sign-up-link{
-  color: #16a34a;
-  font-weight: 600;
-  text-decoration: none;
-}
+.forgot-password:hover,
 .sign-up-link:hover {
   text-decoration: underline;
-}
-
-
-
-.password-wrapper {
-  position: relative;
 }
 
 button.login-btn {
@@ -115,24 +75,59 @@ button.login-btn {
   transition: background 0.3s ease;
 }
 
-
 button.login-btn:hover {
   background: linear-gradient(90deg, #34d399, #16a34a);
+}
+
+
+/* --- START: Final, Corrected Password Field Styles --- */
+
+.password-input-wrapper {
+  position: relative;
 }
 
 .toggle-password {
   position: absolute;
   top: 50%;
   right: 12px;
+  transform: translateY(-50%);
   background: transparent;
   border: none;
   cursor: pointer;
-  transform: translateY(-50%);
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: #53ca2f;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 2.8rem 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  background-color: #fff;
+  color: #222;
+}
+
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="text"] {
+  background-color: #10281d;
+  border-color: #34d399;
+  color: #e5e5e5;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: #22c55e;
 }
 
 body.dark-mode .toggle-password {
@@ -142,6 +137,11 @@ body.dark-mode .toggle-password {
 .toggle-password:focus {
   outline: none;
 }
+
+/* --- END: Final Password Field Styles --- */
+
+
+/* --- START: Final, Corrected Theme Switcher Styles --- */
 
 .theme-switcher {
   position: fixed;
@@ -154,66 +154,69 @@ body.dark-mode .toggle-password {
   position: relative;
   width: 60px;
   height: 30px;
-  background-color: #e7f9ed;
+  background-color: #f4fefc;
   border-radius: 15px;
   cursor: pointer;
   border: 1px solid #d1d5db;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 5px;
+  box-sizing: border-box;
   transition: background-color 0.4s ease;
 }
 
 body.dark-mode .toggle-button {
-  background-color: #132a20;
-  justify-content: flex-end;
+  background-color: #1e4631;
   border: 1px solid #294135;
 }
 
 .toggle-icon {
+  position: absolute;
+  top: 3px;
+  left: 4px;
   width: 22px;
   height: 22px;
   background: linear-gradient(45deg, #ffcc33, #ffb347);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 14px;
-  position: relative;
-  transform-origin: center;
-  transition: background 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: left 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55), background 0.7s;
+  display: grid;
+  place-items: center;
 }
 
 body.dark-mode .toggle-icon {
+  left: 32px;
   background: linear-gradient(45deg, #8972ff, #a795ff);
 }
 
-.fa-sun,
-.fa-moon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.toggle-icon i {
+  grid-area: 1 / 1;
+  font-size: 14px;
+  transition: opacity 0.4s, transform 0.3s ease;
+}
+
+.toggle-icon .fa-sun {
+  color: #3d3d3d;
+}
+
+.toggle-icon .fa-moon {
+  color: #fff;
 }
 
 .fa-moon {
   opacity: 0;
-  transform: translate(-50%, -50%) rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 body.dark-mode .fa-sun {
   opacity: 0;
-  transform: translate(-50%, -50%) rotate(90deg);
+  transform: rotate(90deg);
 }
 
 body.dark-mode .fa-moon {
   opacity: 1;
-  transform: translate(-50%, -50%) rotate(0);
+  transform: rotate(0);
 }
+
+/* --- END: Final Theme Switcher Styles --- */
+
 
 @media (max-width: 480px) {
   .login-container {

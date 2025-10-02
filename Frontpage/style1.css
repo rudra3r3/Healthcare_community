@@ -288,7 +288,7 @@ nav {
     transition: border-color 0.2s, background 0.13s;
 }
 
-.tech-step.active, .tech-step:hover {
+.tech-step:hover {
     background: var(--muted);
     border-color: var(--primary);
 }
@@ -454,8 +454,7 @@ header, .features, .features-section {
 body:not(.dark-mode) .feature-card:hover,
 body:not(.dark-mode) .card:hover,
 body:not(.dark-mode) .tech-step:hover,
-body:not(.dark-mode) .toggle-button:hover,
-body:not(.dark-mode) .nav-list li a:hover {
+body:not(.dark-mode) .toggle-button:hover{
   
   box-shadow: 0 0 18px 6px #fe96d6, 0 0 42px 8px #ff84d0; 
   transform: scale(1.07) translateY(-6px);
@@ -463,17 +462,15 @@ body:not(.dark-mode) .nav-list li a:hover {
 
 body:not(.dark-mode) .nav-list a:hover,
 body:not(.dark-mode) .nav-list a.active {
-  border-bottom: 2.5px solid #ff84d0;
   color: #fe96d6;
-  text-shadow: 0 0 12px #FF6EC788;
-  transition: color 0.18s, border-bottom 0.18s;
+  text-shadow: 0 0 12px #ff84d0;
+  transition: color 0.18s;
 }
 
 body.dark-mode .feature-card:hover,
 body.dark-mode .card:hover,
 body.dark-mode .tech-step:hover,
-body.dark-mode .toggle-button:hover,
-body.dark-mode .nav-list li a:hover {
+body.dark-mode .toggle-button:hover{
   border: 2.5px solid #39FF14; 
   box-shadow: 0 0 18px 6px #39FF1466, 0 0 42px 8px #0891b2bb;
   transform: scale(1.07) translateY(-6px);
@@ -481,8 +478,31 @@ body.dark-mode .nav-list li a:hover {
 
 body.dark-mode .nav-list a:hover,
 body.dark-mode .nav-list a.active {
-  border-bottom: 2.5px solid #39FF14;
   color: #39FF14;
   text-shadow: 0 0 12px #39FF1488;
-  transition: color 0.18s, border-bottom 0.18s;
+  transition: color 0.18s;
+}
+
+#top #login{
+    margin-left: 20px;
+    display: flex;
+    height: fit-content;
+    
+}
+#top #login a{
+    margin: 10px;
+    text-decoration: none;
+    color: var(--text);
+    padding: 12px;
+    border-radius: 10px;
+}
+body.dark-mode #top #login a:hover{
+    border: 2.5px solid #39FF14; 
+    box-shadow: 0 0 18px 6px #39FF1466, 0 0 42px 8px #0891b2bb;
+    transform: scale(1.07) translateY(-6px);
+}
+body:not(.dark-mode) #top #login a:hover{
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 0 18px 6px #fe96d6, 0 0 42px 8px #ff84d0; 
+  transform: scale(1.07) translateY(-6px);
 }

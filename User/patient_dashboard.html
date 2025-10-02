@@ -3,71 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Patient Dashboard | Community Service Center</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <!-- Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-
-  <link rel="stylesheet" href="patient_dashboard.css" />
+  <title>Patient Dashboard | Smart Community Health</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="patient_dashboard.css">
 </head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>🏥 Patient Panel</h2>
-    <a href="#"><i class="fas fa-home"></i> Dashboard</a>
-    <a href="#"><i class="fas fa-user"></i> Profile</a>
-    <a href="#"><i class="fas fa-notes-medical"></i> Appointments</a>
-    <a href="#"><i class="fas fa-pills"></i> Medicines</a>
-    <a href="#"><i class="fas fa-file-medical-alt"></i> Reports</a>
-    <a href="#"><i class="fas fa-comments"></i> Chat Doctor</a>
-    <a href="#"><i class="fas fa-bell"></i> Notifications</a>
-    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  <div id="cursor-main"></div>
+  <div id="cursor-trail"></div>
+
+  <div class="theme-switcher">
+    <div class="toggle-button" id="theme-toggle" tabindex="0" role="switch" aria-checked="false" aria-label="Toggle dark mode">
+      <div class="toggle-icon">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
   </div>
 
-  <!-- Main Content -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2><i class="fas fa-hospital-user"></i> <span class="nav-text">Patient Panel</span></h2>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="active"><i class="fas fa-home"></i> <span class="nav-text">Dashboard</span></a>
+      <a href="#"><i class="fas fa-user"></i> <span class="nav-text">Profile</span></a>
+      <a href="#"><i class="fas fa-notes-medical"></i> <span class="nav-text">Appointments</span></a>
+      <a href="#"><i class="fas fa-pills"></i> <span class="nav-text">Medicines</span></a>
+      <a href="#"><i class="fas fa-file-medical-alt"></i> <span class="nav-text">Reports</span></a>
+      <a href="#"><i class="fas fa-comments"></i> <span class="nav-text">Chat Doctor</span></a>
+    </nav>
+    <div class="sidebar-footer">
+        <a href="#"><i class="fas fa-sign-out-alt"></i> <span class="nav-text">Logout</span></a>
+    </div>
+  </div>
+
   <div class="main-content">
-    <div class="header">
-      <h1>Welcome, John Doe 👋</h1>
+    <header class="header">
+      <div class="header-title">
+        <h1>Welcome, John Doe</h1>
+        <p class="subtitle">Here is your health summary for today.</p>
+      </div>
       <div class="user-info">
         <i class="fas fa-user-circle"></i> Patient ID: #P12345
       </div>
-    </div>
+    </header>
 
-    <!-- Dashboard Cards -->
-    <div class="cards">
+    <div class="cards-grid">
       <div class="card">
-        <i class="fas fa-calendar-check"></i>
+        <i class="card-icon fas fa-calendar-check"></i>
         <h3>Upcoming Appointment</h3>
-        <p>Dr. Smith - 15 Sept, 10:00 AM</p>
+        <p>Dr. Smith - 15 Oct, 10:00 AM</p>
       </div>
       <div class="card">
-        <i class="fas fa-prescription-bottle-alt"></i>
+        <i class="card-icon fas fa-prescription-bottle-alt"></i>
         <h3>Medicines</h3>
         <p>2 Prescriptions Active</p>
       </div>
       <div class="card">
-        <i class="fas fa-heartbeat"></i>
+        <i class="card-icon fas fa-heartbeat"></i>
         <h3>Health Status</h3>
-        <p>Stable - Last Checkup: 10 Sept</p>
+        <p>Stable - Last Checkup: 10 Oct</p>
       </div>
       <div class="card">
-        <i class="fas fa-file-medical"></i>
+        <i class="card-icon fas fa-file-medical"></i>
         <h3>Medical Reports</h3>
         <p>5 Reports Available</p>
       </div>
-      <div class="card">
-        <i class="fas fa-comments"></i>
+       <div class="card">
+        <i class="card-icon fas fa-comments animated-icon"></i>
         <h3>Doctor Chat</h3>
         <p>Chat with your doctor online</p>
       </div>
       <div class="card">
-        <i class="fas fa-bell"></i>
+        <i class="card-icon fas fa-bell animated-icon"></i>
         <h3>Notifications</h3>
         <p>3 New Updates</p>
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Theme Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+      });
+
+      // Cursor Animation
+      const cursor = document.getElementById('cursor-main');
+      const trail = document.getElementById('cursor-trail');
+      let cursorX = window.innerWidth / 2, cursorY = window.innerHeight / 2;
+      let trailX = window.innerWidth / 2, trailY = window.innerHeight / 2;
+      
+      window.addEventListener('mousemove', e => {
+          cursorX = e.clientX;
+          cursorY = e.clientY;
+          gsap.to(cursor, { x: cursorX, y: cursorY, duration: 0.2, ease: "power3.out" });
+      });
+
+      gsap.ticker.add(() => {
+          trailX += (cursorX - trailX) * 0.19;
+          trailY += (cursorY - trailY) * 0.19;
+          gsap.set(trail, { x: trailX, y: trailY });
+      });
+
+      const interactiveElements = document.querySelectorAll('a, .card, .toggle-button');
+      interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+              gsap.to(cursor, { scale: 2.2, background: "#fff", boxShadow: "0 0 40px 10px #0891b2" });
+              gsap.to(trail, { scale: 2.8, borderColor: "#fff" });
+          });
+          el.addEventListener('mouseleave', () => {
+              gsap.to(cursor, { scale: 1, background: "#0891b2", boxShadow: "0 0 18px 6px rgba(8,145,178,.15)" });
+              gsap.to(trail, { scale: 1, borderColor: "#0891b2" });
+          });
+      });
+
+      // Page Load Animations
+      const masterTimeline = gsap.timeline();
+      masterTimeline
+        .from('.sidebar', { x: -260, duration: 1, ease: 'power3.out' })
+        .from('.header-title > *', { opacity: 0, y: 20, stagger: 0.2, duration: 0.8, ease: 'power2.out' }, '-=0.5')
+        .from('.user-info', { opacity: 0, scale: 0.8, duration: 0.8, ease: 'power2.out' }, '-=0.6')
+        .from('.card', {
+            duration: 1,
+            opacity: 0,
+            y: 50,
+            scale: 0.9,
+            ease: "power3.out",
+            stagger: 0.1
+        }, '-=0.5');
+    });
+  </script>
 </body>
 </html>

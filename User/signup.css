@@ -137,7 +137,7 @@ button.signup-btn:hover {
 
 .toggle-password {
   position: absolute;
-  top: 50%;
+  top: 68%;
   right: 12px;
   background: transparent;
   border: none;
@@ -147,7 +147,7 @@ button.signup-btn:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: #28cc64;
 }
 
 
@@ -182,7 +182,7 @@ body.dark-mode .toggle-password {
   align-items: center;
   justify-content: flex-start;
   padding: 0 5px;
-  transition: background-color 0.4s ease;
+  transition: left 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55), background 0.7s;
 }
 
 
@@ -201,7 +201,7 @@ body.dark-mode .toggle-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  /* color: white; */
   font-size: 14px;
   position: relative;
   transform-origin: center;

@@ -507,3 +507,7 @@ body.dark-mode #get-info-button:hover,#get-info-button:active{
     box-shadow: 0 0 8px 3px #39FF1488;
     transition: color 0.25s, background-color 0.25s, box-shadow 0.25s;
 }
+
+.content, .cards{
+    overflow: visible !important;
+}
