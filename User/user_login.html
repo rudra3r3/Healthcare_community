@@ -1,32 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Healthcare Community - Login</title>
-  <link rel="stylesheet" href="user_login.css">
+  <link rel="stylesheet" href="user_login.css" />
 </head>
 <body>
-  <div class="login-container">
-    <a href="../Frontpage/frontpage.html" class="back-btn">←</a>
-    <h2>Healthcare Community</h2>
-    <form>
-      <div class="input-group">
-        <label for="email">Email Address</label>
-         <input type="email" id="email" placeholder="Enter your email" required>
+  <div class="theme-switcher">
+    <div class="toggle-button" id="theme-toggle" tabindex="0" role="switch" aria-checked="false" aria-label="Toggle dark mode">
+      <div class="toggle-icon">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
       </div>
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required>
-      </div>
-      <button type="submit" class="login-btn" id="login_btn">Login</button>
-    </form>
-    <div class="extra-links">
-      <p><a href="#">Forgot Password?</a></p>
-      <p>New member? <a href="signup.html">Sign Up</a></p>
     </div>
   </div>
+
+  <div class="login-container">
+    <h2>Healthcare Community</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+
+      <div class="form-group password-wrapper">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+        <button type="button" class="toggle-password" tabindex="0" aria-label="Show password">
+          <i class="far fa-eye"></i>
+        </button>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+      <a href="#" class="forgot-password">Forgot Password?</a>
+      <p>New member? <a href="#" class="sign-up-link">Sign Up</a></p>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  
   <script src="user_login.js"></script>
 </body>
 </html>
